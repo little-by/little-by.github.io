@@ -1,0 +1,330 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Install Gnu Radio on Ubuntu with USRP2922 | Kotara</title><meta name="keywords" content="USRP,Gnu Radio,Install"><meta name="author" content="Kotar Zhang"><meta name="copyright" content="Kotar Zhang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="简单介绍 做实验需要使用SDR设备，选用了NI的USRP 2922（Ettus的是NI的子公司，他生产的USRP有自己的版本，BNEX四个系列，使用开源的Gnu Radio开发），NI的USRP有自己的配套软件，是运行在Windows上的LabView套件，奈何另外收费且很贵,幸好NI系列的也支持GNU Radio，因此我们选择了在linux上运行的GNU radio，因为他是开源的不用对日后工作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Install Gnu Radio on Ubuntu with USRP2922">
+<meta property="og:url" content="http://little-by.github.io/2020/06/12/Gnu_Radio_Install_on_Ubuntu-1/index.html">
+<meta property="og:site_name" content="Kotara">
+<meta property="og:description" content="简单介绍 做实验需要使用SDR设备，选用了NI的USRP 2922（Ettus的是NI的子公司，他生产的USRP有自己的版本，BNEX四个系列，使用开源的Gnu Radio开发），NI的USRP有自己的配套软件，是运行在Windows上的LabView套件，奈何另外收费且很贵,幸好NI系列的也支持GNU Radio，因此我们选择了在linux上运行的GNU radio，因为他是开源的不用对日后工作">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://little-by.github.io/img/cover/hr1.jpg">
+<meta property="article:published_time" content="2020-06-12T03:15:31.000Z">
+<meta property="article:modified_time" content="2021-03-25T03:12:37.000Z">
+<meta property="article:author" content="Kotar Zhang">
+<meta property="article:tag" content="USRP">
+<meta property="article:tag" content="Gnu Radio">
+<meta property="article:tag" content="Install">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://little-by.github.io/img/cover/hr1.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://little-by.github.io/2020/06/12/Gnu_Radio_Install_on_Ubuntu-1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Kotar Zhang","link":"链接: ","source":"来源: Kotara","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2021-03-25 11:12:37'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">40</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">23</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">简单介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85UHD"><span class="toc-number">3.1.</span> <span class="toc-text">安装UHD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5"><span class="toc-number">3.2.</span> <span class="toc-text">配置虚拟机网络模式-桥接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#USRP%E5%88%B7%E5%9B%BA%E4%BB%B6"><span class="toc-number">3.3.</span> <span class="toc-text">USRP刷固件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85GNU-radio"><span class="toc-number">3.4.</span> <span class="toc-text">安装GNU radio</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E4%BD%BF%E7%94%A8pybombs"><span class="toc-number">3.4.1.</span> <span class="toc-text">（1）使用pybombs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E4%BD%BF%E7%94%A8apt%E5%AE%89%E8%A3%85"><span class="toc-number">3.4.2.</span> <span class="toc-text">（2）使用apt安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Ubuntu-PPA-Installation"><span class="toc-number">3.4.2.1.</span> <span class="toc-text">Ubuntu PPA Installation</span></a></li></ol></li></ol></li></ol></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(/img/cover/hr1.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Kotara</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Install Gnu Radio on Ubuntu with USRP2922</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-06-12T03:15:31.000Z" title="发表于 2020-06-12 11:15:31">2020-06-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-03-25T03:12:37.000Z" title="更新于 2021-03-25 11:12:37">2021-03-25</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1>简单介绍</h1>
+<p>做实验需要使用SDR设备，选用了NI的USRP 2922（Ettus的是NI的子公司，他生产的USRP有自己的版本，BNEX四个系列，使用开源的Gnu Radio开发），NI的USRP有自己的配套软件，是运行在Windows上的LabView套件，奈何另外收费且很贵,幸好NI系列的也支持GNU Radio，因此我们选择了在linux上运行的GNU radio，因为他是开源的不用对日后工作有顾虑。</p>
+<a id="more"></a>  
+<h1>环境</h1>
+<p>GNU需要安装在linux上，我是用的版本是Linux Mint 19.03(基于Ubuntu 18.04)。安装Ubuntu可以选择给电脑装一个windows+ubuntu双系统，也可以装虚拟机。虚拟更安装快一点，移动也方便，所以我在VMware上建了一个Linux Mint的虚拟机。</p>
+<h1>安装</h1>
+<h2 id="安装UHD"><a class="header-anchor" href="#安装UHD">¶</a>安装UHD</h2>
+<p>这里选择使用源代码编译安装的方法。</p>
+<p>首先安装一些依赖库</p>
+<pre><code>sudo apt-get install libboost-all-dev libusb-1.0-0-dev python-mako doxygen python-docutils cmake build-essential
+</code></pre>
+<p>下载源码</p>
+<pre><code>git clone https://github.com/EttusResearch/uhd.git
+</code></pre>
+<p>进入目录</p>
+<pre><code>cd uhd/host 
+</code></pre>
+<p>创建一个build目录,并编译安装</p>
+<pre><code>mkdir build  
+cd build/  
+cmake ../  
+make  
+make test  
+sudo make install  
+sudo ldconfig  
+</code></pre>
+<p>这个编译过程可能时间比较长，可以挂着干点别的了。接下来下载UHD镜像。</p>
+<pre><code>sudo uhd_images_downloader
+</code></pre>
+<p>然后可以用一下命令查看USRP设备</p>
+<pre><code>uhd_find_devices  
+</code></pre>
+<p>这里发现没找到，发现设备和虚拟机没有在一个子网内，需要配置一下。</p>
+<h2 id="配置虚拟机网络模式-桥接"><a class="header-anchor" href="#配置虚拟机网络模式-桥接">¶</a>配置虚拟机网络模式-桥接</h2>
+<p>我电脑有两个网卡，我将其中一个用NAT模式和虚拟公用网络，这样我就可以正常上网。<br>
+另一为了和USRP通信，和虚拟机桥接。</p>
+<p>首先添加一个虚拟网卡，设置为桥接模式：</p>
+<p><img src="/2020/06/12/Gnu_Radio_Install_on_Ubuntu-1/1592836177.png" alt="qnjp"></p>
+<p>然后点击 编辑-&gt; 虚拟网络编辑器</p>
+<p><img src="/2020/06/12/Gnu_Radio_Install_on_Ubuntu-1/1592836497.png" alt="xuniwhlobmjiqi"></p>
+<p>更改设置</p>
+<p><img src="/2020/06/12/Gnu_Radio_Install_on_Ubuntu-1/1592836595.png" alt="gguv"></p>
+<p>设置交接到的网卡<br>
+<img src="/2020/06/12/Gnu_Radio_Install_on_Ubuntu-1/1592836709.png" alt="whka"></p>
+<p>最后，在主机网络适配器找到这个网卡，IPV4设置为固定IP,由于USRP默认IP为：</p>
+<pre><code>192.168.10.2  
+</code></pre>
+<p>所以我们主机IP改为同一网段，例如192.168.10.3，子网掩码255.255.255.0,这样连接网线才能找到USRP</p>
+<h2 id="USRP刷固件"><a class="header-anchor" href="#USRP刷固件">¶</a>USRP刷固件</h2>
+<p>配好网络之后，运行以下命令应该就可以看到USRP了。</p>
+<pre><code>uhd_find_devices  
+</code></pre>
+<p><img src="/2020/06/12/Gnu_Radio_Install_on_Ubuntu-1/1592836979" alt="gfdh"></p>
+<p>但是使用GNU radio 还需要刷一下固件,运行以下命令看一下是否需要刷固件。</p>
+<pre><code>uhd_usrp_probe  
+</code></pre>
+<p>可以看到，并不兼容。</p>
+<p><img src="/2020/06/12/Gnu_Radio_Install_on_Ubuntu-1/20200622220440.png" alt="sadas"></p>
+<p>运行一下命令</p>
+<pre><code>uhd_image_loader --args=&quot;type=usrp2,addr=192.168.10.2,reset&quot;  
+</code></pre>
+<p><img src="/2020/06/12/Gnu_Radio_Install_on_Ubuntu-1/20200622225023.png" alt="sadasdas"><br>
+再运行uhd_usrp_probe,会看到设备的详细信息。</p>
+<p><img src="/2020/06/12/Gnu_Radio_Install_on_Ubuntu-1/1592837528.png" alt="sadaffdg"></p>
+<h2 id="安装GNU-radio"><a class="header-anchor" href="#安装GNU-radio">¶</a>安装GNU radio</h2>
+<p>以下方法二选一</p>
+<h3 id="（1）使用pybombs"><a class="header-anchor" href="#（1）使用pybombs">¶</a>（1）使用pybombs</h3>
+<p>最简单的方式是使用pybombs 安装，一次失败还可以重复安装，还可以支持同时装多个版本。default最新，stable相对比较稳定。</p>
+<pre><code>sudo apt install pybombs  
+pybombs recipes add gr-recipes git+https://mirrors.tuna.tsinghua.edu.cn/pybombs/recipes/gr-recipes.git  
+pybombs recipes add gr-etcetera git+https://mirrors.tuna.tsinghua.edu.cn/pybombs/recipes/gr-etcetera.git  
+mkdir prefix/  
+# 稳定版
+pybombs prefix init -a stable prefix/stable/ -R gnuradio-stable 
+# 最新版
+pybombs prefix init -a default prefix/default/ -R gnuradio-stable
+</code></pre>
+<p>安装好之后进入/prefix/stable或者/prefix/default,</p>
+<pre><code>source ./setup_env.sh
+</code></pre>
+<p>输入以下命令就可以运行了。</p>
+<pre><code>gnuradio-companion
+# 或者  
+pybombs -p stable run gnuradio-companion  
+# 或者
+pybombs -p default run gnuradio-companion
+</code></pre>
+<p>可以运行一个gnu radio自带的FFT demo 试一下，是否成功。</p>
+<h3 id="（2）使用apt安装"><a class="header-anchor" href="#（2）使用apt安装">¶</a>（2）使用apt安装</h3>
+<p>现在很多ubuntu（我使用基于ubuntu18.04LTS的Mint19.3测试可行）都提供了稳定版本的gnuradio，用这个版本安装方便，而且UHD最好也用apt安装(之前版本的gnuradio、uhd需要删除)。可以使用如下命令：</p>
+<blockquote>
+<p>apt install uhd-host<br>
+apt install gnuradio</p>
+</blockquote>
+<p>可能安装完运行demo（一般在/usr/share/gnuradio/examples或/usr/local/share/gnuradio/examples下）会提示没有xterm，安装一个即可。</p>
+<blockquote>
+<p>apt install xterm</p>
+</blockquote>
+<p>使用gnuradio打开/usr/local/share/gnuradio/examples/und/uhd_fft.grc, 运行效果如下：</p>
+<p><img src="/2020/06/12/Gnu_Radio_Install_on_Ubuntu-1/1606357587.png" alt="fft"></p>
+<h4 id="Ubuntu-PPA-Installation"><a class="header-anchor" href="#Ubuntu-PPA-Installation">¶</a>Ubuntu PPA Installation</h4>
+<p>这里主要参考了Gnuradio Wiki <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.<br>
+有时候使用apt 安装并不是想要的版本，需要先添加对应的apt库，在进行安装</p>
+<p>最新版</p>
+<blockquote>
+<p>sudo add-apt-repository ppa:gnuradio/gnuradio-master</p>
+</blockquote>
+<p>现在的Released 版本</p>
+<blockquote>
+<p>sudo add-apt-repository ppa:gnuradio/gnuradio-releases</p>
+</blockquote>
+<p>released 3.8版本</p>
+<blockquote>
+<p>sudo add-apt-repository ppa:gnuradio/gnuradio-releases-3.8</p>
+</blockquote>
+<p>released 3.7版本</p>
+<blockquote>
+<p>sudo add-apt-repository ppa:gnuradio/gnuradio-releases-3.7</p>
+</blockquote>
+<p>添加适合的版本库之后，更新apt，并安装</p>
+<blockquote>
+<p>sudo apt-get update<br>
+sudo apt-get install gnuradio</p>
+</blockquote>
+<p>参考文献：</p>
+<ul>
+<li></li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>InstallGR. Gnuradio Wiki. <a target="_blank" rel="noopener" href="https://wiki.gnuradio.org/index.php/InstallingGR">https://wiki.gnuradio.org/index.php/InstallingGR</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Kotar Zhang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://little-by.github.io/2020/06/12/Gnu_Radio_Install_on_Ubuntu-1/">http://little-by.github.io/2020/06/12/Gnu_Radio_Install_on_Ubuntu-1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://little-by.github.io" target="_blank">Kotara</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/USRP/">USRP</a><a class="post-meta__tags" href="/tags/Gnu-Radio/">Gnu Radio</a><a class="post-meta__tags" href="/tags/Install/">Install</a></div><div class="post_share"><div class="social-share" data-image="/img/cover/hr1.jpg" data-sites="wechat,weibo,qq,facebook,twitter"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat_shoukuan.png" target="_blank"><img class="post-qr-code-img" src="/img/wechat_shoukuan.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/ali_shangjia.png" target="_blank"><img class="post-qr-code-img" src="/img/ali_shangjia.png" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/06/30/ML/"><img class="prev-cover" src="/img/cover/hr3.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Some Experience about ML</div></div></a></div><div class="next-post pull-right"><a href="/2020/06/09/SVM/"><img class="next-cover" src="/img/cover/hr9.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SVM</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2019/12/27/USRP_Research/" title="USRP Research"><img class="cover" src="/img/cover/hr1.jpg"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-12-27</div><div class="title">USRP Research</div></div></a></div><div><a href="/2021/03/17/Gnu-Radio-学习-1/" title="Gnu Radio 学习 (1) 简介及目录"><img class="cover" src="/img/cover/hr1.jpg"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-17</div><div class="title">Gnu Radio 学习 (1) 简介及目录</div></div></a></div><div><a href="/2021/04/06/Gnu-Radio-学习-2/" title="Gnu Radio 学习 (2) 采样率"><img class="cover" src="/img/cover/hr5.jpg"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-04-06</div><div class="title">Gnu Radio 学习 (2) 采样率</div></div></a></div><div><a href="/2021/11/11/Gnu-Radio-学习-3/" title="Gnu Radio 学习 3"><img class="cover" src="/img/cover/hr10.jpg"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-11</div><div class="title">Gnu Radio 学习 3</div></div></a></div><div><a href="/2021/11/17/Gnu-Radio-Install-on-Ubuntu-2/" title="在Ubuntu18.04上安装Gnu Radio"><img class="cover" src="/img/cover/hr5.jpg"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-17</div><div class="title">在Ubuntu18.04上安装Gnu Radio</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Kotar Zhang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to my blog!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    $.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js', function () {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    const initData = {
+      el: '#vcomment',
+      appId: 'XIzcLKSUeyWp7rdTG70S1xcq-gzGzoHsz',
+      appKey: 'wDmzsW5rFnsFzR7elD6QCC4f',
+      placeholder: 'Please leave your footprints (Nickname &amp; E-Mail)',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script></div></body></html>

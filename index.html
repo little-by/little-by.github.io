@@ -1,0 +1,310 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kotara - 非一动之为利害</title><meta name="author" content="Kotar Zhang"><meta name="copyright" content="Kotar Zhang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="非一动之为利害">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kotara">
+<meta property="og:url" content="http://little-by.github.io/index.html">
+<meta property="og:site_name" content="Kotara">
+<meta property="og:description" content="非一动之为利害">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://little-by.github.io/img/avatar.png">
+<meta property="article:author" content="Kotar Zhang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://little-by.github.io/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://little-by.github.io/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Kotar Zhang","link":"链接: ","source":"来源: Kotara","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2022-01-21 13:01:52'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">40</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">23</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/cover/cover_bg.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Kotara</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">Kotara</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/little-by/little-by.github.io" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:kotarzhang@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2022/01/17/Research-and-Summary-for-Wireless-Sensing-2022-Jan-17/" title="Research and Summary for Wireless Sensing 2022 Jan 17">     <img class="post_bg" src="/img/cover/hr4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Research and Summary for Wireless Sensing 2022 Jan 17"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/01/17/Research-and-Summary-for-Wireless-Sensing-2022-Jan-17/" title="Research and Summary for Wireless Sensing 2022 Jan 17">Research and Summary for Wireless Sensing 2022 Jan 17</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-17T07:08:21.000Z" title="发表于 2022-01-17 15:08:21">2022-01-17</time></span></div><div class="content">IMWUT 2021
+¶We Hear Your PACE: Passive Acoustic Localization of Multiple Walking Persons
+
+室内定位是环境感知应用的关键，但现有的解决方案大多需要用户携带设备，以主动感知位置识别信号。然而，许多应用程序不喜欢用户参与，因为，例如，携带设备的繁琐。因此，被动跟踪用户位置的解决方案可能是可取的，但缺乏积极的用户参与，使被动室内定位非常具有挑战性，即使是对一个人。为此，作者提出了多步行者被动声学定位(PACE)，作为小型室内场景的解决方案:它通过精确定位用户的脚步位置来被动地定位用户。特别是，PACE利用结构和空气传播的脚步声冲击声音(FIS);它使用结构上的FIS来利用它们的声弥散特性进行距离估计，并使用机载FIS来进行到达角(AoA)估计和人员识别。为了对抗FIS的低信噪比特性，PACE创新地分别在测距/识别和AoA估计中采用域对抗自适应和光谱加权。作者实现了一个PACE原型，并在典型环境中广泛地评估了它的性能。结果表明，该方法具有较好的亚米定位精度，中值误差为30cm。
+¶MemX: An Aten ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/11/17/Gnu-Radio-Install-on-Ubuntu-2/" title="在Ubuntu18.04上安装Gnu Radio">     <img class="post_bg" src="/img/cover/hr5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在Ubuntu18.04上安装Gnu Radio"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/11/17/Gnu-Radio-Install-on-Ubuntu-2/" title="在Ubuntu18.04上安装Gnu Radio">在Ubuntu18.04上安装Gnu Radio</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-11-17T02:14:44.000Z" title="发表于 2021-11-17 10:14:44">2021-11-17</time></span></div><div class="content">我使用的ubuntu18.04,在VMware系统上,针对python2.7进行的安装，gnuradio的版本是3.7.14.0。
+首先参考官网给出的安装依赖[1] (链接里是gr3.9的依赖，gr3.7仅支持python2.7，不过大体相同)，将每一个block的依赖都安装好，我这里坚持能用apt安装的尽量apt，实在不行再编译。
+我这里总结了一下需要安装依赖：
+
+sudo apt install -y gcc g++ cmake texlive-latex-extra libboost-all-dev libcanberra-gtk-module libcanberra-gtk3-module libgsl-dev swig doxygen build-essential libboost-all-dev libtool libusb-1.0-0 libusb-1.0-0-dev libudev-dev libncurses5-dev libfftw3-bin libfftw3-dev libfftw3-doc libcppunit-1.14-0 libcppunit-dev li ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/11/11/Gnu-Radio-%E5%AD%A6%E4%B9%A0-3/" title="Gnu Radio 学习 3">     <img class="post_bg" src="/img/cover/hr10.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Gnu Radio 学习 3"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/11/11/Gnu-Radio-%E5%AD%A6%E4%B9%A0-3/" title="Gnu Radio 学习 3">Gnu Radio 学习 3</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-11-11T10:23:26.000Z" title="发表于 2021-11-11 18:23:26">2021-11-11</time></span></div><div class="content">这里主要参考了Gnuradio Wiki [1] .
+参考文献：
+
+
+
+
+
+
+InstallGR. Gnuradio Wiki. https://wiki.gnuradio.org/index.php/InstallingGR#From_Source ↩︎
+
+
+
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/11/09/Communication-principle-2/" title="Communication principle 2">     <img class="post_bg" src="/img/cover/hr4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Communication principle 2"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/11/09/Communication-principle-2/" title="Communication principle 2">Communication principle 2</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-11-09T14:11:01.000Z" title="发表于 2021-11-09 22:11:01">2021-11-09</time></span></div><div class="content">1. 快速傅立叶变换 （Fast Fourier Transform, FFT）
+¶傅里叶变换
+首先，什么是傅里叶变换，复变中都会讲到，先来复习一下。 [^2] [1]
+傅立叶变换，表示 将满足一定条件的某个函数表示成三角函数（正弦和/或余弦函数）或者它们的积分的线性组合。
+(1) 定义
+$f(t)$是周期函数，而且满足狄利赫里条件(Dirichlet conditions) ,那么可以函数的 $f(t)$ 的傅里叶变换F(w)存在。
+狄利赫里条件  
+(1) 函数在任意有限区间内连续，或只有有限个第一类间断点
+(2) 在一个周期内，函数有有限个极大值或极小值
+(3) $$f(t)$$ 在单个周期内绝对可积,即 $$ \int_&#123;0&#125;^&#123;T&#125; f(t) dt $$
+
+
+许多情况下，傅里叶变换是可逆变换
+f 是实数函数，而 $\hat f$ 则是复函数，用一个复数来表示振幅和相位
+一般情况下，若“傅里叶变换”一词不加任何限定语，则指的是“连续傅里叶变换”
+
+最近看到一篇讲解傅立叶变换的知乎回答，讲的深入浅出，值得一看，原文如何理解傅里叶变换公式？， ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/08/31/latex-%E7%AC%A6%E5%8F%B7/" title="latex 符号">     <img class="post_bg" src="/img/cover/hr6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="latex 符号"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/31/latex-%E7%AC%A6%E5%8F%B7/" title="latex 符号">latex 符号</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-08-31T03:24:24.000Z" title="发表于 2021-08-31 11:24:24">2021-08-31</time></span></div><div class="content">符号表
+这里主要参考了Gnuradio Wiki [1] .
+参考文献：
+
+
+
+
+
+
+InstallGR. Gnuradio Wiki. https://wiki.gnuradio.org/index.php/InstallingGR#From_Source ↩︎
+
+
+
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/06/09/Summary-of-Material-Sensing/" title="Summary of Material Sensing">     <img class="post_bg" src="/img/cover/hr2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Summary of Material Sensing"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/06/09/Summary-of-Material-Sensing/" title="Summary of Material Sensing">Summary of Material Sensing</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-06-09T05:53:04.000Z" title="发表于 2021-06-09 13:53:04">2021-06-09</time></span></div><div class="content">Material Sensing
+mmWave
+mSense: Towards Mobile Material Sensing with a Single Millimeter-Wave Radio, Chenshu Wu, Fenf Zhang, Beibei Wang, K.J. Ray Liu, UbiComp’20.
+RFID
+Food and Liquid Sensing in Practical Environments using RFIDs. Unsoo Ha, Junshan Leng, Alaa Khaddaj, and Fadel Adib. NSDI’20.
+Tagtag: material sensing with commodity RFID. Binbin Xie, Jie Xiong, Xiaojiang Chen, Eugene Chai, Liyao Li, Zhanyong Tang, Dingyi Fang. SenSys’19.
+Twinleak: Rfid-based liquid leakage detection in industria ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/05/14/%E8%A3%85%E6%9C%BA%E8%BD%AF%E4%BB%B6%E8%AE%B0%E5%BD%95/" title="装机软件记录">     <img class="post_bg" src="/img/cover/hr7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="装机软件记录"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/05/14/%E8%A3%85%E6%9C%BA%E8%BD%AF%E4%BB%B6%E8%AE%B0%E5%BD%95/" title="装机软件记录">装机软件记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-05-14T08:07:20.000Z" title="发表于 2021-05-14 16:07:20">2021-05-14</time></span></div><div class="content">这里主要参考了Gnuradio Wiki [1] .
+参考文献：
+
+
+
+
+WizTree 用来查看各个文件夹的大小
+snipaste 同时显示多个图片
+spacedesk windows 无线投屏
+
+
+
+
+InstallGR. Gnuradio Wiki. https://wiki.gnuradio.org/index.php/InstallingGR#From_Source ↩︎
+
+
+
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/04/12/ubuntu-command/" title="Ubuntu Command">     <img class="post_bg" src="/img/cover/hr5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ubuntu Command"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/04/12/ubuntu-command/" title="Ubuntu Command">Ubuntu Command</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-04-12T11:59:50.000Z" title="发表于 2021-04-12 19:59:50">2021-04-12</time></span></div><div class="content">
+1.查看文件的前几行
+
+cat ratings.csv |head -15
+
+2.查看磁盘状态  df -h
+3.查看所有用户和用户组
+/etc/group文件包含所有组
+/etc/shadow和/etc/passwd系统存在的所有用户名
+1）管理用户（user）的工具或命令；
+useradd 注：添加用户
+adduser 注：添加用户
+passwd 注：为用户设置密码
+usermod 注：修改用户命令，可以通过usermod 来修改登录名、用户的家目录等等；
+groupadd 注：添加用户组；
+groupdel 注：删除用户组；
+groupmod 注：修改用户组信息
+groups 注：显示用户所属的用户组
+
+
+
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/04/06/Gnu-Radio-%E5%AD%A6%E4%B9%A0-2/" title="Gnu Radio 学习 (2) 采样率">     <img class="post_bg" src="/img/cover/hr5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Gnu Radio 学习 (2) 采样率"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/04/06/Gnu-Radio-%E5%AD%A6%E4%B9%A0-2/" title="Gnu Radio 学习 (2) 采样率">Gnu Radio 学习 (2) 采样率</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-04-06T11:30:39.000Z" title="发表于 2021-04-06 19:30:39">2021-04-06</time></span></div><div class="content">Sample rate 采样率
+奈奎斯特原理揭示了一个最小的采样率（信号频率的两倍）。香农版本的表述如下：
+
+如果一个函数 $x(t)$ 包含的频率不超过 $BHz$, 使用间距在 $1/(2B)$ 秒的纵坐标就可以确定这个函数
+
+按照下图构建流图
+
+Sample_rate 设置为$32khz$.
+双击QT GUI Range，这是一个用图形化界面改变变量值的控件，可以看到Id是freq，而Signal Source模块里的Frequency设置的值正是freq，这样就可以在图形中拖动滑块改变Signal Source的频率值。
+
+运行效果如下：
+当频率设置为2k，可以看到下面图里的FFT分析出信号的频率是2k。
+
+当频率设置为14k，可以看到下面图里的FFT分析出信号的频率是14k。
+
+当频率设置为16k，可以看到下面图里的FFT分析出信号的频率是16k。
+
+但是当频率设置为17k时，可以看到下面图里的FFT分析出信号的频率却是15k。这说明出现了信号频率的错误识别。根据奈奎斯特原理，我们设置的32k采样率只能识别16k以下的信号频率。
+Source硬件的例子
+There are s ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/03/25/Communication-principle-1/" title="Communication principle（1）一些基本概念">     <img class="post_bg" src="/img/cover/hr1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Communication principle（1）一些基本概念"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/03/25/Communication-principle-1/" title="Communication principle（1）一些基本概念">Communication principle（1）一些基本概念</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-25T02:54:52.000Z" title="发表于 2021-03-25 10:54:52">2021-03-25</time></span></div><div class="content">这里总结一下通信原理的一些基础知识。
+
+主要参考了这篇博文 [1].
+码元
+波特率（Baud rate）
+波特率 (又称传送速率、码元速率、符号速率或传码率)
+
+
+IQ 分解
+
+
+modulation mothod
+
+
+参考文献：
+
+
+
+
+
+
+十分简明易懂的FFT（快速傅里叶变换）. CSDN ↩︎
+
+
+
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Kotar Zhang</div><div class="author-info__description">非一动之为利害</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length_num">40</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length_num">23</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/little-by/little-by.github.io" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:kotarzhang@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="sticky_layout"><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/01/17/Research-and-Summary-for-Wireless-Sensing-2022-Jan-17/" title="Research and Summary for Wireless Sensing 2022 Jan 17"><img src="/img/cover/hr4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Research and Summary for Wireless Sensing 2022 Jan 17"/></a><div class="content"><a class="title" href="/2022/01/17/Research-and-Summary-for-Wireless-Sensing-2022-Jan-17/" title="Research and Summary for Wireless Sensing 2022 Jan 17">Research and Summary for Wireless Sensing 2022 Jan 17</a><time datetime="2022-01-17T07:08:21.000Z" title="发表于 2022-01-17 15:08:21">2022-01-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/17/Gnu-Radio-Install-on-Ubuntu-2/" title="在Ubuntu18.04上安装Gnu Radio"><img src="/img/cover/hr5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在Ubuntu18.04上安装Gnu Radio"/></a><div class="content"><a class="title" href="/2021/11/17/Gnu-Radio-Install-on-Ubuntu-2/" title="在Ubuntu18.04上安装Gnu Radio">在Ubuntu18.04上安装Gnu Radio</a><time datetime="2021-11-17T02:14:44.000Z" title="发表于 2021-11-17 10:14:44">2021-11-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/11/Gnu-Radio-%E5%AD%A6%E4%B9%A0-3/" title="Gnu Radio 学习 3"><img src="/img/cover/hr10.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Gnu Radio 学习 3"/></a><div class="content"><a class="title" href="/2021/11/11/Gnu-Radio-%E5%AD%A6%E4%B9%A0-3/" title="Gnu Radio 学习 3">Gnu Radio 学习 3</a><time datetime="2021-11-11T10:23:26.000Z" title="发表于 2021-11-11 18:23:26">2021-11-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/09/Communication-principle-2/" title="Communication principle 2"><img src="/img/cover/hr4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Communication principle 2"/></a><div class="content"><a class="title" href="/2021/11/09/Communication-principle-2/" title="Communication principle 2">Communication principle 2</a><time datetime="2021-11-09T14:11:01.000Z" title="发表于 2021-11-09 22:11:01">2021-11-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/31/latex-%E7%AC%A6%E5%8F%B7/" title="latex 符号"><img src="/img/cover/hr6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="latex 符号"/></a><div class="content"><a class="title" href="/2021/08/31/latex-%E7%AC%A6%E5%8F%B7/" title="latex 符号">latex 符号</a><time datetime="2021-08-31T03:24:24.000Z" title="发表于 2021-08-31 11:24:24">2021-08-31</time></div></div></div></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Algorithm/" style="font-size: 1.2em; color: #999da3">Algorithm</a> <a href="/tags/Communication-Principle/" style="font-size: 1.5em; color: #99a9bf">Communication Principle</a> <a href="/tags/Deep-learning/" style="font-size: 1.1em; color: #999">Deep learning</a> <a href="/tags/Github-Pages/" style="font-size: 1.1em; color: #999">Github Pages</a> <a href="/tags/Gnu-Radio/" style="font-size: 1.5em; color: #99a9bf">Gnu Radio</a> <a href="/tags/Install/" style="font-size: 1.1em; color: #999">Install</a> <a href="/tags/ML/" style="font-size: 1.1em; color: #999">ML</a> <a href="/tags/Point-Cloud/" style="font-size: 1.1em; color: #999">Point Cloud</a> <a href="/tags/RFID/" style="font-size: 1.1em; color: #999">RFID</a> <a href="/tags/ReadPaper/" style="font-size: 1.1em; color: #999">ReadPaper</a> <a href="/tags/Research/" style="font-size: 1.3em; color: #99a1ac">Research</a> <a href="/tags/SDR/" style="font-size: 1.4em; color: #99a5b6">SDR</a> <a href="/tags/USRP/" style="font-size: 1.2em; color: #999da3">USRP</a> <a href="/tags/UWB/" style="font-size: 1.1em; color: #999">UWB</a> <a href="/tags/hexo/" style="font-size: 1.1em; color: #999">hexo</a> <a href="/tags/kaptcha/" style="font-size: 1.1em; color: #999">kaptcha</a> <a href="/tags/machine-learning/" style="font-size: 1.1em; color: #999">machine learning</a> <a href="/tags/note/" style="font-size: 1.1em; color: #999">note</a> <a href="/tags/paper/" style="font-size: 1.1em; color: #999">paper</a> <a href="/tags/python/" style="font-size: 1.3em; color: #99a1ac">python</a> <a href="/tags/review/" style="font-size: 1.1em; color: #999">review</a> <a href="/tags/vscode/" style="font-size: 1.1em; color: #999">vscode</a> <a href="/tags/windows/" style="font-size: 1.1em; color: #999">windows</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">十一月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">八月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/02/"><span class="card-archive-list-date">二月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives/">
+              <span>查看更多</span><i class="fas fa-angle-right"  ></i></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">40</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-01-21T05:01:52.690Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Kotar Zhang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to my blog!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "飞出玉龙三百万,搅得周天寒彻".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '飞'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}</script><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    $.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js', function () {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script></div></body></html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Daily | Kotara</title><meta name="author" content="Kotar Zhang"><meta name="copyright" content="Kotar Zhang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="20181207 一、 使用参考标签的   20181207 一、 使用功率比值判断层数 首先使用功率20dBm，天线距离书本60cm,发现漏读很严重，只读到了5本。改用30dBm只读到18本。  图 1 图上所示可能是干扰因素过多导致的混乱。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Daily">
+<meta property="og:url" content="http://little-by.github.io/2019/06/24/Daily/index.html">
+<meta property="og:site_name" content="Kotara">
+<meta property="og:description" content="20181207 一、 使用参考标签的   20181207 一、 使用功率比值判断层数 首先使用功率20dBm，天线距离书本60cm,发现漏读很严重，只读到了5本。改用30dBm只读到18本。  图 1 图上所示可能是干扰因素过多导致的混乱。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://little-by.github.io/img/cover/hr8.jpg">
+<meta property="article:published_time" content="2019-06-24T15:39:21.000Z">
+<meta property="article:modified_time" content="2019-08-23T07:58:02.000Z">
+<meta property="article:author" content="Kotar Zhang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://little-by.github.io/img/cover/hr8.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://little-by.github.io/2019/06/24/Daily/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Kotar Zhang","link":"链接: ","source":"来源: Kotara","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2019-08-23 15:58:02'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">40</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">23</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">20181207</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">一、 使用参考标签的</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">20181207</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">一、 使用功率比值判断层数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">20181205</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">一、 变换天线功率，测量固定距离标签的RSSI</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">二、不同距离下标签之间的相互干扰对rss值的影响（两个标签面对面放置）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">三、不同距离下标签之间的相互干扰对rss值的影响（两个标签并排放置）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text">20181203</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">10.</span> <span class="toc-text">一、 RSS比例判断层数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">10.1.</span> <span class="toc-text">1 实验结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B8%BA%E4%BA%86%E9%81%BF%E5%85%8D%E6%B5%8B%E9%87%8F%E8%AF%AF%E5%B7%AE%EF%BC%8C%E7%94%BB%E5%87%BA%E7%AC%AC%E4%BA%8C%E5%B1%82%E7%9A%84%E6%B5%8B%E9%87%8F%E5%80%BC"><span class="toc-number">10.2.</span> <span class="toc-text">2 为了避免测量误差，画出第二层的测量值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%AC%AC%E4%B8%89%E5%B1%82%E7%9A%84%E6%B5%8B%E9%87%8F%E5%80%BC"><span class="toc-number">10.3.</span> <span class="toc-text">3 第三层的测量值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%85%B6%E4%BB%96"><span class="toc-number">10.4.</span> <span class="toc-text">4 其他</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">11.</span> <span class="toc-text">二、 书籍的遮挡对rss影响</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E9%97%B4%E4%BE%9D%E6%AC%A1%E9%97%B4%E9%9A%940-1-2-3-4-5%E6%9C%AC%E4%B9%A6%E6%B5%8B%E9%87%8Fimage"><span class="toc-number">11.1.</span> <span class="toc-text">中间依次间隔0 1 2 3 4 5本书测量
+
+</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E9%9B%B6%E4%B8%AA"><span class="toc-number">11.2.</span> <span class="toc-text">第零个</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA"><span class="toc-number">11.3.</span> <span class="toc-text">第一个</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E4%B8%AA"><span class="toc-number">11.4.</span> <span class="toc-text">第二个</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E4%B8%AA"><span class="toc-number">11.5.</span> <span class="toc-text">第三个</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E4%B8%AA"><span class="toc-number">11.6.</span> <span class="toc-text">第四个</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E4%B8%AA"><span class="toc-number">11.7.</span> <span class="toc-text">第五个</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">12.</span> <span class="toc-text">三、 标签间的相互干扰对rss影响</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%82%B9"><span class="toc-number">12.1.</span> <span class="toc-text">第一个点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E4%B8%AA-v2"><span class="toc-number">12.2.</span> <span class="toc-text">第二个</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E4%B8%AA-v2"><span class="toc-number">12.3.</span> <span class="toc-text">第三个</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%87%BA-%E6%A0%87%E7%AD%BE%E4%B9%8B%E9%97%B4%E7%9B%B8%E4%BA%92%E5%BD%B1%E5%93%8D%E5%AF%B9%E4%BF%A1%E5%8F%B7%E5%BC%BA%E5%BA%A6%E5%BD%B1%E5%93%8D%E5%BE%88%E5%A4%A7%E7%9A%84"><span class="toc-number">12.4.</span> <span class="toc-text">可以看出&#x3D;&#x3D;标签之间相互影响对信号强度影响很大的&#x3D;&#x3D;</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">13.</span> <span class="toc-text">20181202</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">14.</span> <span class="toc-text">（1）书籍的遮挡对phy影响</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">15.</span> <span class="toc-text">（2）标签间的相互干扰对phy影响</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(/img/cover/hr8.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Kotara</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Daily</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-06-24T15:39:21.000Z" title="发表于 2019-06-24 23:39:21">2019-06-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2019-08-23T07:58:02.000Z" title="更新于 2019-08-23 15:58:02">2019-08-23</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><!--图片示例
+<div  align="center">
+
+![image](picname)   
+
+</div>
+<div  align="center">Fig. 1</div>
+</div>
+-->
+<hr>
+<hr>
+<h1>20181207</h1>
+<h1>一、 使用参考标签的</h1>
+<hr>
+<hr>
+<h1>20181207</h1>
+<h1>一、 使用功率比值判断层数</h1>
+<p>首先使用功率20dBm，天线距离书本60cm,发现漏读很严重，只读到了5本。改用30dBm只读到18本。</p>
+<p><img src="/2019/06/24/Daily/layer-rss-181207-1.png" alt="image"></p>
+<div align="center">图 1</div>
+<p>图上所示可能是干扰因素过多导致的混乱。</p>
+<a id="more"></a>
+<p>下图是使用新标签，只检测标签不放到书中，但是效果仍然不好，而且越是在两天线连接线上越容易漏读。</p>
+<p><img src="/2019/06/24/Daily/layer-rss-181207-2.png" alt="image"></p>
+<div align="center">图 2</div>
+<p><img src="/2019/06/24/Daily/layer-rss-181207-5.png" alt="image"></p>
+<div align="center">图 3</div>  
+<p><img src="/2019/06/24/Daily/layer-rss-181207-7.png" alt="image"></p>
+<div align="center">图 4</div>   
+<p><img src="/2019/06/24/Daily/layer-rss-181207-8.png" alt="image"></p>
+<div align="center">图 5</div>   
+<p>比较两层的结果：</p>
+<p><img src="/2019/06/24/Daily/layer-rss-181207-9.png" alt="image"></p>
+<div align="center">图 6</div>  
+红色是距离两个天线距离相等，黄色是距离第一个天线一层，距离第二个天线三层。  
+<pre><code>X=10*lg(p/1mw)   
+可以推导出  
+P1/P2=10^[(rss1-rss2)/10]   
+然而功率在空气中的分布并不知道，因为不知道功率随着传播损耗的公式，而且天线经过了极化，很难用一个公式表示。  
+</code></pre>
+<p><img src="/2019/06/24/Daily/7bacdb2527e843c8846b53b05b1d57e3.jpeg" alt="image"></p>
+<div align="center">图 7</div>  
+<hr>
+<hr>
+<h1>20181205</h1>
+<h1>一、 变换天线功率，测量固定距离标签的RSSI</h1>
+<p>两个标签F101、F102分别相距天线1.02m、0.53m, 天线变换不同的功率，观察标签的RSSI</p>
+<p><img src="/2019/06/24/Daily/20181204225212.png" alt="image"></p>
+<div align="center">图 1</div>
+<pre><code>dBm是一种衡量信号强度的单位，假设当前位置的信号强度为pmw,表示为dBm值转化公式如下：  
+    X=10*lg(p/1mw)  
+其实是一种表征功率的单位，假设发射功率为1mw,也就是0dDm，小于1mw就是负值。  
+</code></pre>
+<h1>二、不同距离下标签之间的相互干扰对rss值的影响（两个标签面对面放置）</h1>
+<p><img src="/2019/06/24/Daily/rssVdisBtags.png" alt="image"></p>
+<div align="center">图 2</div>
+<p>可以发现当两个标签是正对放置的话，30cm之外干扰才会几乎没有，而这也可能和天线的功率有关。</p>
+<h1>三、不同距离下标签之间的相互干扰对rss值的影响（两个标签并排放置）</h1>
+<p><img src="/2019/06/24/Daily/rssVdisBtags-181207.png" alt="image"></p>
+<div align="center">图 3</div>
+<p>可以发现当两个标签是并排放置的话，随着间距的变化，信号强度先降低再升高。</p>
+<hr>
+<hr>
+<h1>20181203</h1>
+<h1>一、 RSS比例判断层数</h1>
+<h2 id="1-实验结果"><a class="header-anchor" href="#1-实验结果">¶</a>1 实验结果</h2>
+<p><img src="/2019/06/24/Daily/a8c4c9c2116e7d681b7fb5f9bd59c3e.png" alt="image"><br>
+==发现Tag2第二层第三层颠倒==</p>
+<h2 id="2-为了避免测量误差，画出第二层的测量值"><a class="header-anchor" href="#2-为了避免测量误差，画出第二层的测量值">¶</a>2 为了避免测量误差，画出第二层的测量值</h2>
+<p>Tag2的第二层天线1结果<br>
+<img src="/2019/06/24/Daily/1c5fd656c39e1b33a89ff86fcdc399e.png" alt="image"><br>
+Tag2的第二层天线2结果<br>
+<img src="/2019/06/24/Daily/clipboard.png" alt="image"><br>
+比值1.23</p>
+<h2 id="3-第三层的测量值"><a class="header-anchor" href="#3-第三层的测量值">¶</a>3 第三层的测量值</h2>
+<p>Tag2的第三层天线1结果<br>
+<img src="/2019/06/24/Daily/clipboard_1.png" alt="image"><br>
+Tag2的第三层天线2结果<br>
+<img src="/2019/06/24/Daily/clipboard_2.png" alt="image"><br>
+比值1.1</p>
+<h2 id="4-其他"><a class="header-anchor" href="#4-其他">¶</a>4 其他</h2>
+<p>多测量几次也有类似情况<br>
+<img src="/2019/06/24/Daily/190e0d019658c085938e82bbeed1adf_1.png" alt="image"></p>
+<h1>二、 书籍的遮挡对rss影响</h1>
+<h2 id="中间依次间隔0-1-2-3-4-5本书测量image"><a class="header-anchor" href="#中间依次间隔0-1-2-3-4-5本书测量image">¶</a>中间依次间隔0 1 2 3 4 5本书测量<br>
+<img src="/2019/06/24/Daily/190e0d019658c085938e82bbeed1adf.png" alt="image"></h2>
+<p>下面给出每个点的测量值</p>
+<h2 id="第零个"><a class="header-anchor" href="#第零个">¶</a>第零个</h2>
+<p><img src="/2019/06/24/Daily/clipboard_3.png" alt="image"></p>
+<h2 id="第一个"><a class="header-anchor" href="#第一个">¶</a>第一个</h2>
+<p><img src="/2019/06/24/Daily/clipboard_4.png" alt="image"></p>
+<h2 id="第二个"><a class="header-anchor" href="#第二个">¶</a>第二个</h2>
+<p><img src="/2019/06/24/Daily/clipboard_5.png" alt="image"></p>
+<h2 id="第三个"><a class="header-anchor" href="#第三个">¶</a>第三个</h2>
+<p><img src="/2019/06/24/Daily/clipboard_6.png" alt="image"></p>
+<h2 id="第四个"><a class="header-anchor" href="#第四个">¶</a>第四个</h2>
+<p><img src="/2019/06/24/Daily/clipboard_7.png" alt="image"></p>
+<h2 id="第五个"><a class="header-anchor" href="#第五个">¶</a>第五个</h2>
+<p><img src="/2019/06/24/Daily/clipboard_8.png" alt="image"></p>
+<p>可以发现==书籍的遮挡对标签的rss影响明显，但是是不规律的==。</p>
+<h1>三、 标签间的相互干扰对rss影响</h1>
+<p>和昨天相同分三种情况测量，下面是每个点的测量值</p>
+<h2 id="第一个点"><a class="header-anchor" href="#第一个点">¶</a>第一个点</h2>
+<p><img src="/2019/06/24/Daily/clipboard_9.png" alt="image"></p>
+<h2 id="第二个-v2"><a class="header-anchor" href="#第二个-v2">¶</a>第二个</h2>
+<p><img src="/2019/06/24/Daily/clipboard_10.png" alt="image"></p>
+<h2 id="第三个-v2"><a class="header-anchor" href="#第三个-v2">¶</a>第三个</h2>
+<p><img src="/2019/06/24/Daily/clipboard_11.png" alt="image"></p>
+<h2 id="可以看出-标签之间相互影响对信号强度影响很大的"><a class="header-anchor" href="#可以看出-标签之间相互影响对信号强度影响很大的">¶</a>可以看出==标签之间相互影响对信号强度影响很大的==</h2>
+<hr>
+<h1>20181202</h1>
+<h1>（1）书籍的遮挡对phy影响</h1>
+<p><img src="/2019/06/24/Daily/5fd068931545a1a69b436e336cf523c.jpg" alt="image"><br>
+从左往右依次是中间间隔0，1,2,3,4,5本书（书中无标签）测得的相位<br>
+可以发现==书籍的遮挡对标签的相位影响还是很明显的==。</p>
+<h1>（2）标签间的相互干扰对phy影响</h1>
+<p><img src="/2019/06/24/Daily/clipboard_12.png" alt="image"><br>
+鉴于发现书籍本身对信号也会有明显影响，为了对比试验：<br>
+红色：没有遮挡的相位<br>
+黄色：有书籍（无标签）遮挡<br>
+金色：有书籍（和黄色是同一本书，有标签）遮挡<br>
+可以看出==标签之间相互影响也是很大的==，偏离了2个弧度</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Kotar Zhang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://little-by.github.io/2019/06/24/Daily/">http://little-by.github.io/2019/06/24/Daily/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://little-by.github.io" target="_blank">Kotara</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/cover/hr8.jpg" data-sites="wechat,weibo,qq,facebook,twitter"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat_shoukuan.png" target="_blank"><img class="post-qr-code-img" src="/img/wechat_shoukuan.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/ali_shangjia.png" target="_blank"><img class="post-qr-code-img" src="/img/ali_shangjia.png" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2019/06/24/Paper/"><img class="prev-cover" src="/img/cover/hr7.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Paper</div></div></a></div><div class="next-post pull-right"><a href="/2019/06/24/category/"><img class="next-cover" src="/img/cover/hr1.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">category</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Kotar Zhang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to my blog!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    $.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js', function () {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    const initData = {
+      el: '#vcomment',
+      appId: 'XIzcLKSUeyWp7rdTG70S1xcq-gzGzoHsz',
+      appKey: 'wDmzsW5rFnsFzR7elD6QCC4f',
+      placeholder: 'Please leave your footprints (Nickname &amp; E-Mail)',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script></div></body></html>

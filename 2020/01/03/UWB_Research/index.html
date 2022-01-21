@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>UWB Research | Kotara</title><meta name="keywords" content="Research,UWB"><meta name="author" content="Kotar Zhang"><meta name="copyright" content="Kotar Zhang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="技术概念 UWB（Ultra Wide Band，超宽带无线通信技术）是一种无载波通信技术，UWB不使用载波，而是使用短的能量脉冲序列，并通过正交频分调制或直接排序将脉冲扩展到一个频率范围内。UWB的主要特点是传输速率高、空间容量大、成本低、功耗低等，必将成为解决企业、家庭、公共场所等高速因特网接入的需求与越来越拥挤的频率资源分配之间的矛盾的技术手段。  超宽带室内定位系统则包括UWB接收器、UW">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UWB Research">
+<meta property="og:url" content="http://little-by.github.io/2020/01/03/UWB_Research/index.html">
+<meta property="og:site_name" content="Kotara">
+<meta property="og:description" content="技术概念 UWB（Ultra Wide Band，超宽带无线通信技术）是一种无载波通信技术，UWB不使用载波，而是使用短的能量脉冲序列，并通过正交频分调制或直接排序将脉冲扩展到一个频率范围内。UWB的主要特点是传输速率高、空间容量大、成本低、功耗低等，必将成为解决企业、家庭、公共场所等高速因特网接入的需求与越来越拥挤的频率资源分配之间的矛盾的技术手段。  超宽带室内定位系统则包括UWB接收器、UW">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://little-by.github.io/img/cover/hr7.jpg">
+<meta property="article:published_time" content="2020-01-03T09:45:43.000Z">
+<meta property="article:modified_time" content="2020-12-27T07:15:32.000Z">
+<meta property="article:author" content="Kotar Zhang">
+<meta property="article:tag" content="Research">
+<meta property="article:tag" content="UWB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://little-by.github.io/img/cover/hr7.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://little-by.github.io/2020/01/03/UWB_Research/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Kotar Zhang","link":"链接: ","source":"来源: Kotara","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-12-27 15:15:32'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">40</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">23</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">技术概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">技术原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#UWB-TDOA%E5%AE%9A%E4%BD%8D%E5%8E%9F%E7%90%86"><span class="toc-number">2.1.</span> <span class="toc-text">UWB-TDOA定位原理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">UWB超宽带定位技术优势</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">UWB超宽带定位目前应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%A7%E9%81%93%E7%AE%A1%E5%BB%8A"><span class="toc-number">4.1.</span> <span class="toc-text">隧道管廊</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E4%B8%9A%E5%88%B6%E9%80%A0"><span class="toc-number">4.2.</span> <span class="toc-text">工业制造</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%B8%E6%B3%95%E7%9B%91%E7%8B%B1"><span class="toc-number">4.3.</span> <span class="toc-text">司法监狱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%BB%E8%80%81%E9%99%A2"><span class="toc-number">4.4.</span> <span class="toc-text">养老院</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%95%E5%8E%85"><span class="toc-number">4.5.</span> <span class="toc-text">展厅</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">UWB超宽带定位技术应用前景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">参考文献</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(/img/cover/hr7.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Kotara</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">UWB Research</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-01-03T09:45:43.000Z" title="发表于 2020-01-03 17:45:43">2020-01-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-27T07:15:32.000Z" title="更新于 2020-12-27 15:15:32">2020-12-27</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1>技术概念</h1>
+<p>UWB（Ultra Wide Band，超宽带无线通信技术）是一种无载波通信技术，UWB不使用载波，而是使用短的能量脉冲序列，并通过正交频分调制或直接排序将脉冲扩展到一个频率范围内。UWB的主要特点是传输速率高、空间容量大、成本低、功耗低等，必将成为解决企业、家庭、公共场所等高速因特网接入的需求与越来越拥挤的频率资源分配之间的矛盾的技术手段。</p>
+<p><img src="/2020/01/03/UWB_Research/modes.jpg" alt="UWB超宽带定位"></p>
+<p>超宽带室内定位系统则包括UWB接收器、UWB参考标签和主动UWB标签。定位过程中由UWB接收器接收标签发射的UWB信号，通过过滤电磁波传输过程中夹杂的各种噪声干扰，得到含有效信息的信号，再通过中央处理单元进行测距定位计算分析。</p>
+<p>未来无线定位技术的趋势是室内定位与室外定位相结合，实现无缝的、精确的定位。现有的网络技术还不能完全满足这个要求，而UWB技术由于功耗低、抗多径效果好、安全性高、系统复杂度低、定位精度极高等优点，在众多无线定位技术中脱颖而出。</p>
+<a id="more"></a>  
+<!-- more -->  
+<h1>技术原理</h1>
+<p>根据美国联邦通信委员会的规范，UWB的工作频带为3.1~10.6GHz，系统-10dB带宽与系统中心频率之比大于20%或系统带宽至少为500MHz。UWB信号的发生可通过发射时间极短（如2ns）的窄脉冲（如二次高斯脉冲）通过微分或混频等上变频方式调制到UWB工作频段实现。<br>
+超宽带的主要优势有，低功耗、对信道衰落（如多径、非视距等信道）不敏感、抗干扰能力强、不会对同一环境下的其他设备产生干扰、穿透性较强（能在穿透一堵砖墙的环境进行定位），具有很高的定位准确度和定位精度。</p>
+<h2 id="UWB-TDOA定位原理"><a class="header-anchor" href="#UWB-TDOA定位原理">¶</a>UWB-TDOA定位原理</h2>
+<p>该技术采用TDOA（到达时间差原理），利用UWB技术测得定位标签相对于两个不同定位基站之间无线电信号传播的时间差，从而得出定位标签相对于四组定位基站（假设1#、2#为第一组，2#、3#为第二组，3#、4#为第三组，4#、1#为第四组）的距离差：<br>
+<img src="/2020/01/03/UWB_Research/UWB-TDOA1.jpg" alt="UWB-TDOA定位原理"><br>
+式中di,12~di,14为UWB技术测得的定位卡相对于四组定位基站的距离差。<br>
+基本原理如下图所示：<br>
+<img src="/2020/01/03/UWB_Research/UWB-TDOA2.jpg" alt="UWB-TDOA定位原理"><br>
+通过联立下式方程即可解算出定位卡的三维坐标：<br>
+<img src="/2020/01/03/UWB_Research/UWB-TDOA3.jpg" alt="UWB-TDOA定位原理"><br>
+使用TDOA技术不需要定位标签与定位基站之间进行往复通信，只需要定位标签只发射或只接收UWB信号，故能做到更高的定位动态和定位容量。<br>
+<img src="/2020/01/03/UWB_Research/UWB.jpg" alt="UWB超宽带定位现场定位示意图"></p>
+<h1>UWB超宽带定位技术优势</h1>
+<p>UWB是一种高速、低成本和低功耗新兴无线通信技术。UWB信号是带宽大于500MHz或基带带宽和载波频率的比值大于0.2的脉冲信号(UWBWG，2001)，具有很宽的频带范围，FCC规定UWB的频带从3.1GHz～10.6GHz，并限制信号的发射功率在-41dBm以下。</p>
+<p>由此可见，UWB聚焦在两个领域的应用上，一是符合IEEE802.15.3a标准的短距离高速数据通信，即无线无延迟地传播大量多媒体数据，速率要达到1OOMbit/s-500Mbit/s；另一个是符合IEEE802.15.4a的低速低功率传输，用于室内精确定位，例如工地施工人员的位置发现、化工厂危险源检测、监狱服刑犯人危险行为预测、机器人运动跟踪等。</p>
+<p>UWB信号的特点说明它在定位上具有低成本、抗多径干扰、穿透能力强的优势，所以可以应用于静止或者移动物体以及人的定位跟踪，能提供十分精确的定位精度。</p>
+<h1>UWB超宽带定位目前应用</h1>
+<h2 id="隧道管廊"><a class="header-anchor" href="#隧道管廊">¶</a>隧道管廊</h2>
+<p>在隧道施工现场，通过部署UWB超宽带定位系统，将定位标签集成至员工胸卡、安全帽等穿戴设备内，可以提供的集风险管控、人员管理、实时显示、应急救援等功能能够准确定位工人位置，保障工人施工安全、施工质量、施工进度。<br>
+<img src="/2020/01/03/UWB_Research/app1.jpg" alt="隧道管廊"></p>
+<h2 id="工业制造"><a class="header-anchor" href="#工业制造">¶</a>工业制造</h2>
+<p>在工厂中，UWB超宽带定位系统可以帮助传统工厂实现数字化管理，可实时查看员工位置、在岗时间、离岗时间、移动轨迹，提高岗位巡查效率。通过后台对仓储货物位置的监管，可查看物品位置、所属仓库等数据，防止物资设备的丢失。<br>
+<img src="/2020/01/03/UWB_Research/app2.jpg" alt="工业制造"></p>
+<h2 id="司法监狱"><a class="header-anchor" href="#司法监狱">¶</a>司法监狱</h2>
+<p>监狱安全管理一直是备受关注的问题，通过UWB超宽带定位技术如何杜绝监狱犯人管理漏洞、降低监管执法风险呢？<br>
+在监狱，通过UWB超宽带定位系统，将定位标签集成至犯人定位腕带中，能够对服刑犯人进行实时监控。包括：实时掌握人员的实时位置、人数清点、犯人腕带防拆报警、电子围栏、聚众分析、行动轨迹跟踪、 回放、摄像联动警报等，能够很大程度的降低监管执法的风险，防止意外事故的发生。<br>
+<img src="/2020/01/03/UWB_Research/app3.jpg" alt="司法监狱"></p>
+<h2 id="养老院"><a class="header-anchor" href="#养老院">¶</a>养老院</h2>
+<p>在养老院，通过给老人佩戴智能手环或胸牌，不仅能够实时查看老人位置，还能够通过设置电子围栏来圈定安全活动范围，一旦老人走出安全区域，系统就会及时预警，通知管理人员前往查看，避免老人走失。<br>
+因为护工人员不可能24小时陪在每一个老人身边，难免会有疏漏，所以可以将一键报警功能集成在手环或胸牌之中，一旦老人遇到危急情况，按下按钮就能够通知护工人员及时予以救助，避免危及老人生命健康安全。</p>
+<h2 id="展厅"><a class="header-anchor" href="#展厅">¶</a>展厅</h2>
+<p>在会展、展厅内，UWB超宽带定位系统可实现智能化导览服务，一方面可以实时导引观众前往想去的展位，另外也可以对观众的位置数据进行精准统计，查看参展客户及工作人员在展厅内的观览轨迹、停留时间等，实现办展效果精准分析。让展方了解参展人员感兴趣产品，为后期提升展会质量工作提供明确方向。</p>
+<h1>UWB超宽带定位技术应用前景</h1>
+<p>采用UWB进行无线定位，可以满足未来无线定位的需求，在众多无线定位技术中有相当大的优势，拒恒高科技实际应用案例中表明超宽带定位的精度已经可以达到10cm。此外，超宽带无线电定位，很容易将定位与通信结合，快速发展的短距离超宽带通信无疑将带动UWB在定位技术的发展，而常规无线电难以做到这一点。随着UWB超宽带定位技术的不断成熟和发展，市场需求的不断增加，相信超宽带定位系统将会应用到更多行业。</p>
+<h1>总结</h1>
+<p>以上就是关于UWB超宽带定位技术原理、优势、UWB应用现状及前景的知识介绍，UWB技术由于功耗低、抗多径效果好、安全性高、系统复杂度低、能提供精确定位精度等优点，在众多无线定位技术中脱颖而出，成为未来无线定位技术的热点。恒高科技相信基于UWB超宽带定位信息的智慧化行业解决方案是室内定位领域中的趋势，具有广大的发展前景。</p>
+<h1>参考文献</h1>
+<p>[1] UWB. (2018, August 11). Baidu baike. Retrieved January 2, 2020. from <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/UWB">https://baike.baidu.com/item/UWB</a><br>
+[2] 厘米级高精度定位. (2018, October 19). 知乎. Retrieved January 2, 2020. from <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/47190294">https://zhuanlan.zhihu.com/p/47190294</a></p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Kotar Zhang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://little-by.github.io/2020/01/03/UWB_Research/">http://little-by.github.io/2020/01/03/UWB_Research/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://little-by.github.io" target="_blank">Kotara</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Research/">Research</a><a class="post-meta__tags" href="/tags/UWB/">UWB</a></div><div class="post_share"><div class="social-share" data-image="/img/cover/hr7.jpg" data-sites="wechat,weibo,qq,facebook,twitter"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat_shoukuan.png" target="_blank"><img class="post-qr-code-img" src="/img/wechat_shoukuan.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/ali_shangjia.png" target="_blank"><img class="post-qr-code-img" src="/img/ali_shangjia.png" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/04/09/Point_Cloud_Research/"><img class="prev-cover" src="/img/cover/hr1.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Point Cloud Research</div></div></a></div><div class="next-post pull-right"><a href="/2019/12/27/USRP_Research/"><img class="next-cover" src="/img/cover/hr1.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">USRP Research</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2019/12/27/USRP_Research/" title="USRP Research"><img class="cover" src="/img/cover/hr1.jpg"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-12-27</div><div class="title">USRP Research</div></div></a></div><div><a href="/2020/04/09/Point_Cloud_Research/" title="Point Cloud Research"><img class="cover" src="/img/cover/hr1.jpg"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-04-09</div><div class="title">Point Cloud Research</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Kotar Zhang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to my blog!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    $.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js', function () {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    const initData = {
+      el: '#vcomment',
+      appId: 'XIzcLKSUeyWp7rdTG70S1xcq-gzGzoHsz',
+      appKey: 'wDmzsW5rFnsFzR7elD6QCC4f',
+      placeholder: 'Please leave your footprints (Nickname &amp; E-Mail)',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script></div></body></html>
